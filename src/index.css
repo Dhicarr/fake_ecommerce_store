@@ -1,13 +1,205 @@
+html, #root {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: scroll;
+  overflow-x: hidden;
+  height:100%;
+  width:100%;
 }
+.checkout_image {
+  width: 2em;
+  height: 2em;
+  color:red;
+}
+svg{
+  position: fixed;
+  right:20px;
+  top:10px;
+}
+.navbar_shop_title{
+  pointer-events: none;
+  display:block;
+  position: fixed;
+  width: 98%;
+  text-align: center;
+}
+.Navbar{
+  padding: 0em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  padding:0.5em;
+  z-index: 3;
+}
+img {
+  width: 13em;
+  height: 13em;
+}
+.items_container{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  height:fit-content;
+}
+.Item{
+  display: relative;
+  width: 25%;
+  height: max(20em,calc(350vw/10));
+  border: solid 1px lightgrey;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+@media only screen and (max-width: 850px) {
+  .Item{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .Item{
+    width: 100%;
+  }
+}
+.Item_Detail_Wrapper{
+  height:max(6em,calc(130vw/10));
+}
+.Item_Category{
+  color:grey;
+  font-size: max(0.8em,calc(12vw/10));
+}
+.Item_Price{
+  color:green;
+  font-size: max(0.8em,calc(12vw/10));
+}
+.Item_Title{
+  font-size: max(1em,calc(15vw/10));
+  margin-bottom: 0em;
+  user-select: none;
+  pointer-events: none;
+}
+.Item_Image{
+  width: max(8em,calc(100vw/10));
+  height: max(8em,calc(100vw/10));
+}
+.Item_Select_Box{
+  opacity: 1;
+  position: flex;
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.867);
+  z-index: 2;
+  padding: 2em;
+  user-select: none;
+  pointer-events: none;
+  margin-bottom: 0.1em;
+}
+.Item_Select_Box_Wrapper{
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 99.5%;
+}
+.Item_Select_Background{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  margin-top: -2em;
+  margin-left: -2em;
+  opacity: 0;
+  z-index: 1;
+}
+.Item_Select_Background:hover{
+  transition: 0.5s;
+  opacity: 1;
+  background-color: rgba(152, 152, 152, 0.16);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+}
+.welcome_section{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Ruda', sans-serif;
+  font-weight: 500;
+  color:white;
+  user-select: none;
+}
+.welcome_title_wrapper{
+  text-shadow: 2px 2px 1em #ffffff;
+  width: fit-content;
+  background-image: linear-gradient(0.40turn, #3eff7b, #005639, #13ea00);
+  background-clip: text;
+  margin: auto;
+}
+.welcome_title_wrapper:hover{
+  transition: 0.4s;
+  text-shadow: 1px 1px 1em #00d220;
+  color: transparent;
+}
+.welcome_title{
+  font-size: max(2em,calc(40vw/10));
+}
+.welcome_subtitle{
+  font-size: max(1.5em,calc(30vw/10));
+}
+.Popup{
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.34);
+  z-index: 1031;
+}
+.Popup_Window{
+  display: block;
+  position:relative;
+  height:fit-content;
+  width: 25em;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.5em;
+  text-align: left;
+  padding: 2em;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+.Popup_Window > p {
+  text-align: center;
+}
+.Popup_Close{
+  position: absolute;
+  border: solid 1em black;
+  top: 0;
+  right: 0;
+}
+Button > img {
+  width:1em;
+  height:2em;
+}
+.Footer{
+  background-color: rgb(39, 39, 39);
+  color:white;
+  text-align: center;
+  padding-top:0.5em;
+  padding-bottom: 0.5em;
+  user-select: none;
 }
